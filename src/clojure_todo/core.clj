@@ -4,6 +4,5 @@
             [compojure.route :as route]))
 
 (defroutes app
-  (GET "/:name" [name] (str "<h1>Hello, " name "!</h1>"))
-  (GET "/" [] "<h1>Hello Clojure</h1>")
+  (route/files "/" {:root "public" :index-files ["index.html"]})
   (route/not-found "<h1>Page not found</h1>"))
